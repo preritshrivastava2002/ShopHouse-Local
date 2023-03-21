@@ -6,7 +6,7 @@ const flash = require('connect-flash');         /* Including flash for message d
 const fast2sms = require('fast-two-sms');       /* Including fast2sms for sending sms */
 const session = require('express-session');
 const path = require('path');
-const routes = require("../ShopHouse-Local/routes/routes");
+const routes = require("./routes/routes");
 require('dotenv').config();
 require('./controllers/passport')(passport);
 
