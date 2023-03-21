@@ -1,13 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const ejs = require('ejs');
 const passport = require('passport');
 const flash = require('connect-flash');         /* Including flash for message display */
 const fast2sms = require('fast-two-sms');       /* Including fast2sms for sending sms */
 const session = require('express-session');
 const path = require('path');
-const routes = require("../SAB-LOCAL/routes/routes");
+const routes = require("../ShopHouse-Local/routes/routes");
 require('dotenv').config();
 require('./controllers/passport')(passport);
 
