@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>ShopHouse local</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css"/>
+		<style>html {
+			scroll-behavior: auto;
+		}</style>
+	</head>
+	<body>
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="./" class="logo">ShopHouse local</a>
+				<nav id="nav">
+					<a href="#about">About</a>
+					<a href="#addshop">Add Shop</a>
+					<a href="#shopnow">Shop Now</a>
+					<a href="#donate">Donate</a>
+					<a href="#contactus">Contact Us</a>
+					<% if (typeof user != 'undefined' ) { %>
+						<button class="button special">
+							<% if (user.addShop) { %>
+								<a href="/myshop">My Shop</a>
+							<% } else { %>
+								<a href="/"><%= user.name %></a>
+							<% } %>
+						</button>
+						<button class="button special"><a href="/logout">Logout</a></button>
+					<% }else{ %>
+						<button class="button special"><a href="./formlogin">Login</a></button>
+						<button class="button special"><a href="./formregister">Register</a></button>
+					<% } %>
+				</nav>
+			</div>
+		</header>
+		<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+		<% if(success != ''){ %>
+			<div class="alert alert-success alert-dismissible fade show" role="alert">
+				<%= success %>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+		<% } %>
+		<% if(error != ''){ %>
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				<%= error %>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+		<% } %>
+		<% if(success_msg != ''){ %>
+			<div class="alert alert-success alert-dismissible fade show" role="alert">
+				<%= success_msg %>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+		<% } %>
+	
+		<!-- Banner -->
+		<section id="banner">
+			<div class="inner">
+				<h1 class="banner">ShopHouse local</h1>
+				<ul class="actions">
+					<!--Carousel Wrapper-->
+					<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+						<!--Indicators-->
+						<ol class="carousel-indicators">
+						    <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+						    <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+						    <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+						</ol>
+                        <!--/.Indicators-->
+                            
+						<!--Slides-->
+						<div class="carousel-inner" role="listbox">
+						<!--First slide-->
+						<div class="carousel-item active">
+							<img class="d-block w-100" src="assets/img/carousal0.jpg"
+							alt="First slide">
+						</div>
+						<!--/First slide-->
+						<!--Second slide-->
+						<div class="carousel-item">
+							<img class="d-block w-100" src="assets/img/carousal1.jpg"
+							alt="Second slide">
+						</div>
+						<!--/Second slide-->
+						<!--Third slide-->
+						<div class="carousel-item">
+							<img class="d-block w-100" src="assets/img/carousal2.png"
+							alt="Third slide">
+						</div>
+						<!--/Third slide-->
+						<!--Fourth slide-->
+						<div class="carousel-item">
+							<img class="d-block w-100" src="assets/img/carousal3.png"
+							alt="Fourth slide">
+						</div>
+						<!--/Fourth slide-->
+						<!--Fifth slide-->
+						<div class="carousel-item">
+							<img class="d-block w-100" src="assets/img/carousal4.jpg"
+							alt="Fifth slide">
+						</div>
+						<!--/Fifth slide-->
+						</div>
+                        <!--/.Slides-->
+                        
+						<!--Controls-->
+						<a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						    <span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+						<!--/.Controls-->
+					</div>
+					<!--/.Carousel Wrapper-->
+				</ul>
+			</div>
+		</section>
+
+		<!-- about -->
+		<section id="about">
+			<div class="inner">
+				<header>
+					<h2>About<br><br></h2>
+				</header>
+				<p><b>SHOPHOUSE LOCAL</b></p>
+				<p>It provides a platform where customers can connect to their local shops. It aims at increasing the interaction between customers and shops in their locality by helping customers book their number on the shop they want to visit. The online booking system saves the customer's time, increases the sales in shops, and also helps in maintaining social distancing. Customers can also show their support to small businesses by donating them some funds. SHOPHOUSE LOCAL supports the campaign “Vocal for Local”.</p>
+				<br><p><b>FEATURES-</b></p>
+				<p><ul><span class="fa fa-hand-o-right"></span> <b>Support small Biz:</b> SHOPHOUSE LOCAL provides an easy-to-use interface to see local small businesses and donate some money to them if they need financial help</ul></p>
+				<p><ul><span class="fa fa-hand-o-right"></span> <b>Book your number:</b> Customers can reserve their slot online at any shop they want to visit, they will be provided with a token number and they will be notified the time they should visit that shop.</ul></p>
+				<p><ul><span class="fa fa-hand-o-right"></span> <b>Advertise your product/service/offer:</b> SHOPHOUSE LOCAL provides a column where business owners can share a post advertising their products, services, offers.</ul></p>
+			</div>
+		</section>
+
+		<!-- addshop -->
+		<section id="addshop">
+			<div class="inner">
+				<article>
+					<div class="content">
+						<header>
+							<h2>Add Shop<br><br><br></h2>
+							<p>To avail all the features offered to shops, shop owner must follow these steps-</p>
+						</header>
+					</div>
+				</article>
+				<article>
+					<div class="content">
+						<br>
+						<span class="icon fa-user-circle"></span>
+						<header>
+							<h3>Step-1</h3>
+						</header>
+						<p>Login/Register on website SHOPHOUSE LOCAL</p>
+						<ul class="actions">
+							<li><a href="/formlogin" class="button alt">Login/Register</a></li>
+						</ul>
+					</div>
+				</article>
+				<article>
+				    <div class="content">
+						<br>
+						<span class="icon fa-handshake-o"></span>
+						<header>
+							<h3>Step-2</h3>
+						</header>
+						<p>Fill required details in the form to register your shop/startup/business on SHOPHOUSE LOCAL</p>
+						<ul class="actions">
+							<li><a href="./formaddshop" class="button alt">Register Shop</a></li>
+						</ul>
+					</div>
+				</article>
+			</div>
+		</section>
+
+        <!-- shopnow -->
+		<section id="shopnow">
+			<% if(typeof errors != 'undefined') { %>
+				<% errors.forEach(function(error) { %>
+					<div class="alert alert-warning alert-dismissible fade show" role="alert">
+						<%= error.msg %>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				<% }); %>
+			<% } %>
+			<div class="inner">
+				<header>
+					<h2>SHOP NOW/SEARCH SHOP<br></h2><br>
+					<form action="/filterarea#shopnow" method="post">
+						<select  name="area">
+							<option value="" disabled selected>Choose area under this Pincode</option>
+							<%for(let i=0; i<val.length; i++){%>
+								<option value="<%=val[i]%>"><%=val[i]%></option>
+							<%}%>
+						</select>
+						<br>
+						<input type="hidden" name="pincode" value="<%=pcode.pc%>">
+						<input type="submit" name="click" value="Submit">
+					</form>
+				</header>
+				<p>Customer can open the dashboard of any shop which are registered on the website, there he/she can find the current number of customers which are lined up and are yet to visit the shop to buy their required commodities, and the expected time for his/her turn.</p>
+				<p>To book a slot at any shop customer will be required to register through his/her phone number and he/she will be provided with a token number.</p>
+				<p>As soon the customer books a slot, he/she will be notified the expected time via sms on their registered phone number, customer will receive one more notification 15 min prior to their call; if the customer don't appear within 20 min at max after they receive the sms then their registration will be cancelled and they will have to take a new token number for shopping.</p>
+				<p>At a time a customer can register his/her slot on 3 shops (of same type, eg: grocery, parlour etc) at max (this is done to avoid fake registrations).</p>
+			</div>
+		</section>
+
+		<!-- donate -->
+		<section id="donate">
+			<div class="inner">
+				<article>
+					<div class="content">
+						<header>
+							<h2>DONATIONS<br><br></h2>
+						</header>
+						<div class="image fit">
+							<img src="assets/img/pic02.jpg" alt="" />
+						</div>
+						<p>If you want to search shop. You may search here-</p>
+					    <ul class="actions">
+							<li><a href="#shopnow" class="button alt">Search Shop <span class="icon fa-arrow-right"></span></a></li>
+						</ul>
+					</div>
+				</article>
+				<article class="alt">
+					<div class="content">
+						<header>
+							<h2><br><br></h2>
+						</header>
+						<div class="image fit">
+							<img src="assets/img/pic01.jpg" alt="" />
+						</div>
+						<p>For fundraising, please fill in the form below.</p>
+					    <ul class="actions">
+							<li><a href="/formdonate" class="button alt">Donate</a></li>
+						</ul>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<!-- contactus -->
+		<section id="contactus">
+			<% if(success_msg != ''){ %>
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					<%= success_msg %>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			<% } %>
+			<% if(error_cntct != ''){ %>
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<%= error_cntct %>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			<% } %>
+			<div class="inner">
+				<header>
+					<h2>CONTACT US<br><br></h2>
+				</header>
+				<form method="post" action="/contactindex#contactus">
+					<div class="field half first">
+						<label for="username">Name</label>
+						<input type="text" name="username" id="username" />
+					</div>
+					<div class="field half">
+						<label for="useremail">Email</label>
+						<input type="email" name="useremail" id="useremail" />
+					</div>
+					<div class="field">
+						<label for="message">Message</label>
+						<textarea name="message" id="message" rows="2"></textarea>
+					</div>
+					<ul class="actions">
+						<li><input  type="submit" value="Send Message" class="alt" /></li>
+					</ul>
+				</form>
+				<div class="copyright">
+					&copy; 2023  <a href ="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=prefixsuffix.projects@gmail.com&su=SUBJECT&body=BODY&tf=1"><span class="icon fa-envelope-o "></span> prefix_suffix</a>  
+					<br> Developers: <a href="https://www.linkedin.com/in/palash-mishra-2a5877204/"><span class="icon fa-linkedin"></span> Palash Misha</a>. <a href="https://www.linkedin.com/in/prasam-jain-59a45a191/"><span class="icon fa-linkedin"></span> Prasam Jain</a>. <a href="https://www.linkedin.com/in/prerit-shrivastava-1b4a52201/"><span class="icon fa-linkedin"></span> Prerit Shrivastava</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>			
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	</body>
+</html>
