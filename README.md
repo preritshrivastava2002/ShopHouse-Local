@@ -1,6 +1,13 @@
 # ShopHouse-Local
- It provides a platform for local shops to connect with their regular customers by online mode and thus helping
-customers to avoid hustle of standing in queue in them. In it shops can ask for a donation if they really need some financial help and shops can also put up advertisements for offers on the website.
+Sab Local is a web application that provides a platform for customers to purchase products online from their favorite local retailers. The app aims to promote local businesses and make it easier for customers to buy from them. It allows local retailers to create their store profiles and add their products, which can be easily searched and purchased by customers.
+
+
+The app has two interfaces: one for customers and the other for retailers:- 
+Customers can browse and search for products based on category, brand, and location. They can add products to their cart. The app also allows customers to track their orders, view order history, and rate the retailer's services by providing feedback.
+
+
+On the retailer's side, they can create their store profiles, add their products, and manage their inventory. They can also view orders and manage deliveries. The app provides retailers with various tools to promote their products, such as analytics, advertising, and customer management.
+
 
 ## :hammer_and_wrench: Installation:
     1. Cloning repository.
